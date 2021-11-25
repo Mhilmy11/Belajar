@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Hilmy</title>
+    <link rel="stylesheet" href="res.css">
+</head> 
+<body>
+    <div id="modal" class="modal">
+        <div class="in-modal">
+            <form onsubmit="onSubmit(event)">
+                <input required name="judul" class="in-box-modal" type="text" placeholder="Judul">
+                <button type="submit" class="btn-1">Tambah</button>
+                <button type="button" class="btn-2" onclick="offModal()">Batal</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="back">
+        <div>
+            <div id="list">
+                <div class="box"><h1>Hello</h1></div>
+                <div class="box"><h1>Hello</h1></div>
+                <div class="box"><h1>Hello</h1></div>
+
+            </div>
+            <button class="btn-1" onclick="onModal()">Tambah</button>
+        </div>
+    </div>
+</body>
+<script>
+    var modal = document.getElementById("modal")
+    
+    function onModal(){
+        modal.style.display="flex"
+    }
+
+    function offModal(){
+        modal.style.display="none"
+    }
+
+    function onSubmit(e){
+        e.preventDefault()
+        var abc = e.target['judul'].value
+        console.log(abc)
+
+        var targetClone = document.getElementsByClassName('box')[0]
+        var clone = targetClone.cloneNode(true)
+        clone.lastChild.innerHTML = abc
+        document.getElementById("list").appendChild(clone) 
+
+        offModal()
+    }
+</script>
+</html>
