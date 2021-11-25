@@ -35,10 +35,10 @@
         </div>
     </header>
 
-    <div id="note">
-        <div class="container note">
+    <div>
+        <div id="note" class="container note">
             <div class="card">
-                 <h2>Title</h2>
+                <h2>Title</h2>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt aliquid culpa asperiores qui unde pariatur corrupti tempore architecto nam dolorum deleniti ipsum commodi, minima ullam est perferendis nemo a incidunt.</p>
             </div>
             <div class="card">
@@ -79,11 +79,17 @@
     function onSubmit(e){
         e.preventDefault()
         var title = e.target['title'].value
+        var body = e.target["body"].value
         console.log(title)
 
-        var titleClone = document.getElementsByClassName('card')
+        var titleClone = document.getElementsByClassName('card')[0]
+
         var note = titleClone.cloneNode(true)
-        clone.lastChild.innerHTML = title
+
+        note.children[0].innerHTML = title
+
+
+
         document.getElementById("note").appendChild(note) 
 
         Cancel()
