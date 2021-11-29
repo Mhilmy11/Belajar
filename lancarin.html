@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="lancarin.css">
+</head>
+<body>
+    <div id="modal" class="modal">
+        <div class="in-modal">
+            <h2>Choose Size / Color :</h2>
+            <form>
+                <div class="flex">
+                    <button type="button" class="inbox">
+                        <div class="warna-1"></div>
+                    </button>
+                    <button class="inbox"></button>
+                </div>
+                <div>
+                    <button onsubmit="add(event)" class="btn-3">Add To Cart</button>
+                    <button onclick="batal()" class="btn-4">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="modal-2" class="modal-2">
+        <div class="in-modal-2">
+            <button class="btn-3">Checkout</button>
+            <button onclick="batal2()" class="btn-4">Cancel</button>
+        </div>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="b-atas">
+                <h1>Barang Second</h1>
+                <div class="flex">
+                    <button onclick="checkout()" class="btn-2">📋</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="slide-2">
+        <div class="container">
+            <div class="flex">
+                <div onclick="produk('abc', '/assets/undraw_hello_re_3evm.svg')" class="box">
+                    <img height="200px" width="200px" src="/assets/undraw_hello_re_3evm.svg" alt="produk-1">
+                </div>
+                <div onclick="produk()" class="box">
+                    <img height="200px" width="200px" src="assets/undraw_details_8k13.png" alt="produk-1">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    var modal = document.getElementById("modal")
+    var modal2 = document.getElementById("modal-2")
+
+    
+    function checkout(){
+        modal2.style.display = "flex"
+        console.log
+    }
+    
+    function batal2(){
+        modal2.style.display = "none"
+    }
+    
+    function produk(nama_produk, gambar){
+        modal.style.display = "flex"
+        console.log(nama_produk)
+        console.log(gambar)
+    }
+    
+    function batal(){
+        modal.style.display = "none"
+    }
+    
+    function add(e){
+        var add = e.target["gambar"].value
+        console.log(add)
+    }
+
+
+</script>
+</html>
